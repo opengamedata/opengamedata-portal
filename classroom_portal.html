@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    
+  <title>Field Day Lab Classroom Portal</title>
+</head>
+<!-- <body onload="onload()"> -->
+<body id="body" onload="onload()">
+
+<link rel="stylesheet" href="style.css">
+
+<div class="titlebar">
+  <h1 id="game_name">Classroom Portal for $GAMENAME</h1>
+</div>
+<div id="mainscreen">
+    <form id="id_form" method="GET" action="">
+      <h2 class="instructions">Please Enter Your Player ID Below:</h2>
+      <input type="text" id="id_box" name="playerID" required minlength="4" maxlength="4" pattern="[a-z][0-9][0-9][0-9]">
+      <br>
+      <input type="submit" id="btn_submit" value="Play">
+    </form>
+<script src="classroom_portal.js"></script>
+</body>
+</html>
