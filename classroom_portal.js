@@ -12,10 +12,17 @@ function onload() {
         }
     }
     let url = window.location.href.toString();
-    let paramstring = url.split("?");
-    paramstring = paramstring[1].split("&");
     let params = {};
-    paramstring.forEach(function(item, index) {let param = item.split("="); params[param[0]] = param[1];} );
+    let paramstring = url.split("?");
+    if (!paramstring[1] == undefined)
+    {
+        paramstring = paramstring[1].split("&");
+        paramstring.forEach(function(item, index) {let param = item.split("="); params[param[0]] = param[1];} );
+    }
+    else
+    {
+        params["game"] = "lakeland";
+    }
 
     var selected_game_option = game_options[params["game"]];
 
