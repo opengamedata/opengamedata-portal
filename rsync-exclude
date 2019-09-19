@@ -18,4 +18,5 @@ node_modules
 coffee_out.js
 browserify_out.js
 minify_out.js.report.txt
+old
 rsync-exclude
