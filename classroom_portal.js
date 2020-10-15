@@ -6,7 +6,7 @@ function onload() {
             "redirect": "https://fielddaylab.wisc.edu/play/lakeland/usda/iframe.html"
         },
         "jowilder": {
-            "display_name": "Jo Wilder and the Captiol Case",
+            "display_name": "Jo Wilder and the Capitol Case",
             "bg_image": "https://fielddaylab.wisc.edu/assets/img/hero-images/jowilder-bg.jpg",
             "redirect": "https://fielddaylab.wisc.edu/play/jowilder/game/iframe.html"
         }
