@@ -31,12 +31,19 @@ function onload() {
     elem_game_name.innerHTML = elem_game_name.innerHTML.replace("$GAMENAME", selected_game_option["display_name"]);
     document.body.style.backgroundImage = `url(${selected_game_option["bg_image"]})`;
     let id_form = document.getElementById("id_form");
-    id_form.action = selected_game_option["redirect"];
     let id_box = document.getElementById("class_id_box");
     id_box.oninvalid = function(event) {
         id_box.setCustomValidity("");
         if (!event.target.validity.valid) {
-            id_box.setCustomValidity("Your Player ID should be a letter followed by three numbers.");
+            id_box.setCustomValidity("Your Class ID should be a letter followed by three numbers.");
         }
     }
+    let username_box = document.getElementById("username_box");
+    username_box.oninvalid = function(event) {
+        id_box.setCustomValidity("");
+        if (!event.target.validity.valid) {
+            id_box.setCustomValidity("Your User Name should only use letters and numbers.");
+        }
+    }
+    id_form.action = selected_game_option["redirect"];
 }
