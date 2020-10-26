@@ -15,14 +15,22 @@
   <h1 id="game_name">Classroom Portal for $GAMENAME</h1>
 </div>
 <div id="mainscreen">
-    <form id="id_form" method="GET" action="">
+    <form id="id_form" method="POST" action="https://fielddaylab.wisc.edu/logger/register.php" target="result_frame">
       <h2 class="instructions">Please Enter Your Classroom ID:</h2>
-      <input type="text" id="class_id_box" name="classroom_id" required minlength="4" maxlength="4" pattern="[a-z][0-9][0-9][0-9]">
+      <input type="text" id="class_id_box" name="class_id" required minlength="4" maxlength="4" pattern="[a-z][0-9][0-9][0-9]">
       <h2 class="instructions">Please Enter Your User Name:</h2>
       <input type="text" id="username_box" name="username" required minlength="4" maxlength="8" pattern="\w{4,8}">
       <br>
-      <input type="submit" id="btn_submit" value="Play">
+      <input type="hidden" id="player_id_box_submission" name="player_id">
+      <input type="submit" id="btn_submit" value="Save">
     </form>
+    <br />
+    <form id="play_form" method="GET" action="">
+      <input type="hidden" id="player_id_box_play" name="player_id">
+      <input type="submit" id="btn_play" value="Play" disabled>
+    </form>
+    <iframe name="result_frame" hidden></iframe>
+</div>
 <script src="classroom_portal.js"></script>
 </body>
 </html>

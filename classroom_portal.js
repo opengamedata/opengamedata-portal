@@ -30,7 +30,6 @@ function onload() {
     let elem_game_name = document.getElementById("game_name");
     elem_game_name.innerHTML = elem_game_name.innerHTML.replace("$GAMENAME", selected_game_option["display_name"]);
     document.body.style.backgroundImage = `url(${selected_game_option["bg_image"]})`;
-    let id_form = document.getElementById("id_form");
     let id_box = document.getElementById("class_id_box");
     id_box.oninvalid = function(event) {
         id_box.setCustomValidity("");
@@ -40,10 +39,25 @@ function onload() {
     }
     let username_box = document.getElementById("username_box");
     username_box.oninvalid = function(event) {
-        id_box.setCustomValidity("");
+        username_box.setCustomValidity("");
         if (!event.target.validity.valid) {
-            id_box.setCustomValidity("Your User Name should only use letters and numbers.");
+            username_box.setCustomValidity("Your User Name should only use letters and numbers.");
         }
     }
-    id_form.action = selected_game_option["redirect"];
+
+    let player_id = new Uint32Array(1);
+    window.crypto.getRandomValues(player_id);
+    console.log(`player id: ${player_id.join()}`);
+    let player_id_box_sub = document.getElementById("player_id_box_submission");
+    player_id_box_sub.value = player_id.join();
+    let player_id_box_play = document.getElementById("player_id_box_play");
+    player_id_box_play.value = player_id.join();
+
+    let id_form = document.getElementById("id_form");
+    id_form.onsubmit = function(event) {
+        document.getElementById("btn_submit").disabled = true;
+        document.getElementById("btn_play").disabled = false;
+    }
+    let play_form = document.getElementById("play_form");
+    play_form.action = selected_game_option["redirect"];
 }
