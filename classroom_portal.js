@@ -50,13 +50,14 @@ function onload() {
         }
     }
 
-    let player_id = new Uint32Array(1);
+    let player_id_list = new Uint32Array(1);
     window.crypto.getRandomValues(player_id);
-    console.log(`player id: ${player_id.join()}`);
+    let player_id = player_id_list.join().substr(0, 6);
+    console.log(`player id: ${player_id}`);
     let player_id_box_sub = document.getElementById("player_id_box_submission");
-    player_id_box_sub.value = player_id.join();
+    player_id_box_sub.value = player_id;
     let player_id_box_play = document.getElementById("player_id_box_play");
-    player_id_box_play.value = player_id.join();
+    player_id_box_play.value = player_id;
 
     let id_form = document.getElementById("id_form");
     id_form.onsubmit = function(event) {
