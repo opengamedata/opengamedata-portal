@@ -3,7 +3,7 @@ function onload() {
         "lakeland": {
             "display_name": "Lakeland",
             "bg_image": "https://fielddaylab.wisc.edu/assets/img/hero-images/lakeland.jpg",
-            "redirect": "https://fielddaylab.wisc.edu/play/lakeland/usda/iframe.html"
+            "redirect": "https://fielddaylab.wisc.edu/play/lakeland/game/iframe.html"
         }
         // "jowilder": {
         //     "display_name": "Jo Wilder and the Capitol Case",
