@@ -11,17 +11,17 @@ function onload() {
         //     "redirect": "https://fielddaylab.wisc.edu/play/jowilder/game/iframe.html"
         // }
     }
-    // let url = window.location.href.toString();
-    // let params = {};
-    // let paramstring = url.split("?");
-    // if (!paramstring[1] == undefined)
-    // {
-    //     paramstring = paramstring[1].split("&");
-    //     paramstring.forEach(function(item, index) {let param = item.split("="); params[param[0]] = param[1];} );
-    // }
+    let url = window.location.href.toString();
+    let params = {};
+    let paramstring = url.split("?");
+    if (!paramstring[1] == undefined)
+    {
+        paramstring = paramstring[1].split("&");
+        paramstring.forEach(function(item, index) {let param = item.split("="); params[param[0]] = param[1];} );
+    }
     // else
     // {
-    //     params["game"] = "lakeland";
+    //     params["class_id"] = "";
     // }
 
     // var selected_game_option = game_options[params["game"]];
@@ -31,8 +31,13 @@ function onload() {
     elem_game_name.innerHTML = elem_game_name.innerHTML.replace("$GAMENAME", selected_game_option["display_name"]);
     document.body.style.backgroundImage = `url(${selected_game_option["bg_image"]})`;
     let id_box = document.getElementById("class_id_box");
+    if (!(params["class_id"] === undefined)) {
+        id_box.value = params["class_id"];
+        id_box.readonly = true;
+    }
     id_box.oninvalid = function(event) {
         id_box.setCustomValidity("");
+        id_box.readonly = false;
         if (!event.target.validity.valid) {
             id_box.setCustomValidity("Your Class ID should be a letter followed by three numbers.");
         }
