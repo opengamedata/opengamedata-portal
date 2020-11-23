@@ -51,7 +51,7 @@ function onload() {
     }
 
     let player_id_list = new Uint32Array(1);
-    window.crypto.getRandomValues(player_id);
+    window.crypto.getRandomValues(player_id_list);
     let player_id = player_id_list.join().substr(0, 6);
     console.log(`player id: ${player_id}`);
     let player_id_box_sub = document.getElementById("player_id_box_submission");
